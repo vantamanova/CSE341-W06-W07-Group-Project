@@ -1,0 +1,282 @@
+[
+  {
+    "name": "Melinoë",
+    "associated_games": ["Hades II"],
+    "role": "Protagonist"
+  },
+  {
+    "name": "Hecate",
+    "associated_games": ["Hades II"],
+    "role": "Mentor / Goddess of Magic"
+  },
+  {
+    "name": "Nemesis",
+    "associated_games": ["Hades II"],
+    "role": "Antagonist / Rival"
+  },
+  {
+    "name": "Odysseus",
+    "associated_games": ["Hades II"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Arachne",
+    "associated_games": ["Hades II"],
+    "role": "Supporting / Mythical Figure"
+  },
+  {
+    "name": "Narcissus",
+    "associated_games": ["Hades II"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Cerberus",
+    "associated_games": ["Hades II"],
+    "role": "Guardian / Companion"
+  },
+  {
+    "name": "Gustave",
+    "associated_games": ["Clair Obscur: Expedition 33"],
+    "role": "Protagonist"
+  },
+  {
+    "name": "Maelle",
+    "associated_games": ["Clair Obscur: Expedition 33"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Lune",
+    "associated_games": ["Clair Obscur: Expedition 33"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Sciel",
+    "associated_games": ["Clair Obscur: Expedition 33"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Verso",
+    "associated_games": ["Clair Obscur: Expedition 33"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Monoco",
+    "associated_games": ["Clair Obscur: Expedition 33"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Renoir",
+    "associated_games": ["Clair Obscur: Expedition 33"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Esquie",
+    "associated_games": ["Clair Obscur: Expedition 33"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Geralt of Rivia",
+    "associated_games": ["The Witcher 3: Wild Hunt"],
+    "role": "Protagonist"
+  },
+  {
+    "name": "Ciri",
+    "associated_games": ["The Witcher 3: Wild Hunt"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Yennefer of Vengerberg",
+    "associated_games": ["The Witcher 3: Wild Hunt"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Triss Merigold",
+    "associated_games": ["The Witcher 3: Wild Hunt"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Dandelion",
+    "associated_games": ["The Witcher 3: Wild Hunt"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Zoltan Chivay",
+    "associated_games": ["The Witcher 3: Wild Hunt"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Vesemir",
+    "associated_games": ["The Witcher 3: Wild Hunt"],
+    "role": "Mentor"
+  },
+  {
+    "name": "Eredin",
+    "associated_games": ["The Witcher 3: Wild Hunt"],
+    "role": "Antagonist"
+  },
+  {
+    "name": "Aloy",
+    "associated_games": ["Horizon Zero Dawn"],
+    "role": "Protagonist"
+  },
+  {
+    "name": "Sylens",
+    "associated_games": ["Horizon Zero Dawn"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Rost",
+    "associated_games": ["Horizon Zero Dawn"],
+    "role": "Mentor / Father Figure"
+  },
+  {
+    "name": "Erend",
+    "associated_games": ["Horizon Zero Dawn"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Avad",
+    "associated_games": ["Horizon Zero Dawn"],
+    "role": "Supporting / King"
+  },
+  {
+    "name": "Elisabet Sobeck",
+    "associated_games": ["Horizon Zero Dawn"],
+    "role": "Scientist / Lore Character"
+  },
+  {
+    "name": "Tarnished",
+    "associated_games": ["Elden Ring"],
+    "role": "Protagonist"
+  },
+  {
+    "name": "Melina",
+    "associated_games": ["Elden Ring"],
+    "role": "Guide"
+  },
+  {
+    "name": "Ranni the Witch",
+    "associated_games": ["Elden Ring"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Radahn",
+    "associated_games": ["Elden Ring"],
+    "role": "Boss"
+  },
+  {
+    "name": "Malenia",
+    "associated_games": ["Elden Ring"],
+    "role": "Boss"
+  },
+  {
+    "name": "Godrick the Grafted",
+    "associated_games": ["Elden Ring"],
+    "role": "Boss"
+  },
+  {
+    "name": "Hornet",
+    "associated_games": ["Hollow Knight: Silksong"],
+    "role": "Protagonist"
+  },
+  {
+    "name": "Lace",
+    "associated_games": ["Hollow Knight: Silksong"],
+    "role": "Antagonist"
+  },
+  {
+    "name": "Shakra",
+    "associated_games": ["Hollow Knight: Silksong"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Forge-Daughter",
+    "associated_games": ["Hollow Knight: Silksong"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Bell Beast",
+    "associated_games": ["Hollow Knight: Silksong"],
+    "role": "Boss"
+  },
+  {
+    "name": "Sam Porter Bridges",
+    "associated_games": ["Death Stranding 2: On the Beach"],
+    "role": "Protagonist"
+  },
+  {
+    "name": "Fragile",
+    "associated_games": ["Death Stranding 2: On the Beach"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Higgs",
+    "associated_games": ["Death Stranding 2: On the Beach"],
+    "role": "Antagonist"
+  },
+  {
+    "name": "Deadman",
+    "associated_games": ["Death Stranding 2: On the Beach"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Mama (Lockne)",
+    "associated_games": ["Death Stranding 2: On the Beach"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Eivor Varinsdottir",
+    "associated_games": ["Assassin's Creed Valhalla"],
+    "role": "Protagonist"
+  },
+  {
+    "name": "Sigurd Styrbjornsson",
+    "associated_games": ["Assassin's Creed Valhalla"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Basim Ibn Ishaq",
+    "associated_games": ["Assassin's Creed Valhalla"],
+    "role": "Supporting"
+  },
+  {
+    "name": "King Alfred",
+    "associated_games": ["Assassin's Creed Valhalla"],
+    "role": "Antagonist / King"
+  },
+  {
+    "name": "Randvi",
+    "associated_games": ["Assassin's Creed Valhalla"],
+    "role": "Supporting"
+  },
+  {
+    "name": "V",
+    "associated_games": ["Cyberpunk 2077"],
+    "role": "Protagonist"
+  },
+  {
+    "name": "Johnny Silverhand",
+    "associated_games": ["Cyberpunk 2077"],
+    "role": "Supporting / Antihero"
+  },
+  {
+    "name": "Judy Alvarez",
+    "associated_games": ["Cyberpunk 2077"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Panam Palmer",
+    "associated_games": ["Cyberpunk 2077"],
+    "role": "Supporting"
+  },
+  {
+    "name": "River Ward",
+    "associated_games": ["Cyberpunk 2077"],
+    "role": "Supporting"
+  },
+  {
+    "name": "Goro Takemura",
+    "associated_games": ["Cyberpunk 2077"],
+    "role": "Supporting"
+  }
+]

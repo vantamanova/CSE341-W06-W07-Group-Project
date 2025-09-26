@@ -1,0 +1,201 @@
+[
+  {
+    "title": "Hades II",
+    "genre": "Roguelike / Action RPG",
+    "release_date": "2025-09-25",
+    "platform": [
+      "Windows",
+      "macOS",
+      "Nintendo Switch",
+      "Nintendo Switch 2"
+    ],
+    "developer": "Supergiant Games",
+    "characters": [
+      "Melinoë",
+      "Hecate",
+      "Nemesis",
+      "Odysseus",
+      "Arachne",
+      "Narcissus",
+      "Cerberus"
+    ],
+    "playtime_hours": 20
+  },
+  {
+    "title": "Clair Obscur: Expedition 33",
+    "genre": "Role-playing",
+    "release_date": "2025-04-24",
+    "platform": [
+      "PlayStation 5",
+      "Windows",
+      "Xbox Series X/S"
+    ],
+    "developer": "Sandfall Interactive",
+    "characters": [
+      "Gustave",
+      "Maelle",
+      "Lune",
+      "Sciel",
+      "Verso",
+      "Monoco",
+      "Renoir",
+      "Esquie"
+    ],
+    "playtime_hours": 30
+  },
+  {
+    "title": "The Witcher 3: Wild Hunt",
+    "genre": "Action role-playing",
+    "release_date": "2015-05-19",
+    "platform": [
+      "PlayStation 4",
+      "Windows",
+      "Xbox One",
+      "Nintendo Switch",
+      "PlayStation 5",
+      "Xbox Series X/S"
+    ],
+    "developer": "CD Projekt Red",
+    "characters": [
+      "Geralt of Rivia",
+      "Ciri",
+      "Yennefer of Vengerberg",
+      "Triss Merigold",
+      "Dandelion",
+      "Zoltan Chivay",
+      "Vesemir",
+      "Eredin"
+    ],
+    "playtime_hours": 50
+  },
+  {
+    "title": "Horizon Zero Dawn",
+    "genre": "Action role-playing",
+    "release_date": "2017-02-28",
+    "platform": [
+      "PlayStation 4",
+      "Windows",
+      "PlayStation 5"
+    ],
+    "developer": "Guerrilla Games",
+    "characters": [
+      "Aloy",
+      "Sylens",
+      "Rost",
+      "Erend",
+      "Avad",
+      "Elisabet Sobeck"
+    ],
+    "playtime_hours": 70
+  },
+  {
+  "title": "Elden Ring",
+  "genre": "Action role-playing",
+  "release_date": "2022-02-25",
+  "platform": [
+    "PlayStation 4",
+    "PlayStation 5",
+    "Xbox One",
+    "Xbox Series X/S",
+    "Windows"
+  ],
+  "developer": "FromSoftware",
+  "characters": [
+    "Tarnished",
+    "Melina",
+    "Ranni the Witch",
+    "Radahn",
+    "Malenia",
+    "Godrick the Grafted"
+  ],
+  "playtime_hours": 55
+},
+{
+  "title": "Hollow Knight: Silksong",
+  "genre": "Metroidvania",
+  "release_date": "2025-09-04",
+  "platform": [
+    "Windows",
+    "macOS",
+    "Linux",
+    "Nintendo Switch",
+    "Nintendo Switch 2",
+    "PlayStation 4",
+    "PlayStation 5",
+    "Xbox One",
+    "Xbox Series X/S"
+  ],
+  "developer": "Team Cherry",
+  "characters": [
+    "Hornet",
+    "Lace",
+    "Shakra",
+    "Forge-Daughter",
+    "Bell Beast"
+  ],
+  "playtime_hours": 30
+},
+{
+  "title": "Death Stranding 2: On the Beach",
+  "genre": "Action / Adventure",
+  "release_date": "2025-06-26",
+  "platform": [
+    "PlayStation 5"
+  ],
+  "developer": "Kojima Productions",
+  "characters": [
+    "Sam Porter Bridges",
+    "Fragile",
+    "Higgs",
+    "Deadman",
+    "Mama (Lockne)"
+  ],
+  "playtime_hours": 45
+},
+{
+  "title": "Assassin's Creed Valhalla",
+  "genre": "Action role-playing",
+  "release_date": "2020-11-10",
+  "platform": [
+    "PlayStation 4",
+    "PlayStation 5",
+    "Xbox One",
+    "Xbox Series X/S",
+    "Windows",
+    "Stadia",
+    "Luna"
+  ],
+  "developer": "Ubisoft Montreal",
+  "characters": [
+    "Eivor Varinsdottir",
+    "Sigurd Styrbjornsson",
+    "Basim Ibn Ishaq",
+    "King Alfred",
+    "Randvi"
+  ],
+  "playtime_hours": 60
+},
+{
+  "title": "Cyberpunk 2077",
+  "genre": "Action role-playing",
+  "release_date": "2020-12-10",
+  "platform": [
+    "Windows",
+    "PlayStation 4",
+    "PlayStation 5",
+    "Xbox One",
+    "Xbox Series X/S",
+    "Stadia"
+  ],
+  "developer": "CD Projekt Red",
+  "characters": [
+    "V",
+    "Johnny Silverhand",
+    "Judy Alvarez",
+    "Panam Palmer",
+    "River Ward",
+    "Goro Takemura"
+  ],
+  "playtime_hours": 23
+}
+]
