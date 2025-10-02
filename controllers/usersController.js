@@ -1,6 +1,6 @@
 // Controller for handling logic related to user endpoints (CRUD operations, authentication helpers).
 
-const User = require('../models/users');
+const User = require('../models/userModel');
 
 exports.getAllUsers = async (req, res) => {
     try {
