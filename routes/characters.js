@@ -1,27 +1,96 @@
 // Defines routes for character-related endpoints and maps them to controller functions.
+
 const express = require("express");
 const router = express.Router();
-const {
-  getAllCharacters,
-  getCharacterById,
-  createCharacter,
-  updateCharacter,
-  deleteCharacter,
-} = require("../controllers/characters");
 
-// GET all characters
-router.get("/", getAllCharacters);
+/**
+ * @swagger
+ * /characters:
+ *   get:
+ *     description: Get all characters
+ *     responses:
+ *       200:
+ *         description: Success
+ */
+router.get("/", (req, res) => {
+  res.send("Characters route working");
+});
 
-// GET a character by ID
-router.get("/:id", getCharacterById);
+/**
+ * @swagger
+ * /characters:
+ *   post:
+ *     description: Create a new character
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               role:
+ *                 type: string
+ *               game:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Character created
+ */
+router.post("/", (req, res) => {
+  res.send("Character created");
+});
 
-// POST a new character
-router.post("/", createCharacter);
+/**
+ * @swagger
+ * /characters/{id}:
+ *   put:
+ *     description: Update a character
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               role:
+ *                 type: string
+ *               game:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Character updated
+ */
+router.put("/:id", (req, res) => {
+  res.send(`Character ${req.params.id} updated`);
+});
 
-// PUT update a character
-router.put("/:id", updateCharacter);
-
-// DELETE a character
-router.delete("/:id", deleteCharacter);
+/**
+ * @swagger
+ * /characters/{id}:
+ *   delete:
+ *     description: Delete a character
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Character deleted
+ */
+router.delete("/:id", (req, res) => {
+  res.send(`Character ${req.params.id} deleted`);
+});
 
 module.exports = router;
