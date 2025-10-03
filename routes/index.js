@@ -21,7 +21,7 @@ router.get('/test-db', async (req, res) => {
 });
 
 // Will be added later 
-// router.use('/users', require('./users'));
+router.use('/users', require('./userRoutes'));
 // router.use('/games', require('./games'));
 // router.use('/characters', require('./characters'));
 // router.use('/platforms', require('./platforms'));
