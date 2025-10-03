@@ -53,19 +53,21 @@ exports.addUser = async (req, res) => {
 
 exports.updateUser = async (req, res) => {
     try {
-        const updatedUser = await User.findByIdAndUpdate(userId, req.body, { new: true }); // Replace with actual DB call
+        const userId = req.params.userId; 
+        const updatedUser = await User.findByIdAndUpdate(userId, req.body, { new: true, runValidators: true }); // Replace with actual DB call
         if (!updatedUser) {
             return res.status(404).json({ error: 'User not found' });
         }
         res.json(updatedUser);
     } catch (err) {
-        res.status(400).json({ error: 'Failed to update user' });
+        console.error('Update error:', err.message); 
+        res.status(400).json({ error: err.message });
     }
 };
 
 exports.deleteUser = async (req, res) => {
     try {
-        const userId = req.params.id;
+        const userId = req.params.userId;
         // Logic to delete a user by ID from the database
         const deletedUser = await User.findByIdAndDelete(userId); // Replace with actual DB call
         if (!deletedUser) {

@@ -3,6 +3,7 @@ const Joi = require('joi');
 
 // User schema
 const userSchema = Joi.object({
+  role: Joi.string().valid('admin', 'user').required(),
   username: Joi.string().min(3).required(),
   email: Joi.string().email().required(),
   favorites: Joi.array().items(Joi.string()).default([]),
