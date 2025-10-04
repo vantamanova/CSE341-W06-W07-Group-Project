@@ -40,15 +40,34 @@ exports.getUserbyUsername = async (req, res) => {
     }
 };
 
+// controllers/usersController.js
 exports.addUser = async (req, res) => {
-    try {
-        const newUser = new User(req.body);
-        // Logic to add a new user to the database
-        const savedUser = await newUser.save(); // Replace with actual DB call
-        res.status(201).json(savedUser);
-    } catch (err) {
-        res.status(500).json({ error: 'Failed to add user' });
+  try {
+    const payload = { ...req.body };
+
+    // Ensure date is a Date object (Swagger sends a string)
+    if (payload.date_of_registration) {
+      payload.date_of_registration = new Date(payload.date_of_registration);
     }
+
+    const savedUser = await User.create(payload);
+    return res.status(201).json(savedUser);
+  } catch (err) {
+    // Duplicate key (unique email/username)
+    if (err && err.code === 11000) {
+      const field = Object.keys(err.keyPattern || {})[0] || 'field';
+      return res.status(409).json({ error: `${field} already exists` });
+    }
+
+    // Mongoose validation error
+    if (err && err.name === 'ValidationError') {
+      const details = Object.values(err.errors).map(e => e.message);
+      return res.status(400).json({ error: 'Validation failed', details });
+    }
+
+    console.error('Add user error:', err); // keep this for debugging
+    return res.status(500).json({ error: 'Failed to add user' });
+  }
 };
 
 exports.updateUser = async (req, res) => {
