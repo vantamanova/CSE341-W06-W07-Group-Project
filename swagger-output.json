@@ -1,0 +1,280 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Video Game API",
+    "description": "API for managing games, users, characters, and platforms",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/test-db": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Create a new user",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "type": "string",
+                  "example": "user"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "Amily"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "amily@gmail.com"
+                },
+                "favorites": {
+                  "type": "array",
+                  "example": [
+                    "Hades II",
+                    "Cyberpunk 2077"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rank": {
+                  "type": "string",
+                  "example": "Expert"
+                },
+                "date_of_registration": {
+                  "type": "string",
+                  "example": "2021-08-22T00:00:00.000Z"
+                },
+                "age": {
+                  "type": "number",
+                  "example": 29
+                },
+                "membership": {
+                  "type": "string",
+                  "example": "premium"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/username/{username}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{userId}": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Create a new user",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "type": "string",
+                  "example": "user"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "Amily"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "amily@gmail.com"
+                },
+                "favorites": {
+                  "type": "array",
+                  "example": [
+                    "Hades II",
+                    "Cyberpunk 2077"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rank": {
+                  "type": "string",
+                  "example": "Expert"
+                },
+                "date_of_registration": {
+                  "type": "string",
+                  "example": "2021-08-22T00:00:00.000Z"
+                },
+                "age": {
+                  "type": "number",
+                  "example": 29
+                },
+                "membership": {
+                  "type": "string",
+                  "example": "premium"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
