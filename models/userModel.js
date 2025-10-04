@@ -10,6 +10,9 @@ const userSchema = new mongoose.Schema({
   age: { type: Number, min: 13, required: true },
   membership: { type: String, enum: ['free', 'premium'], required: true },
   createdAt: { type: Date, default: Date.now }
-});
+},
+{
+    versionKey: false 
+  });
 
 module.exports = mongoose.model('User', userSchema);
