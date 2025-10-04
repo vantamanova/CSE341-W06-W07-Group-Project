@@ -1,20 +1,17 @@
-const swaggerJsdoc = require("swagger-jsdoc");
-const swaggerUi = require("swagger-ui-express");
 
-const options = {
-  definition: {
-    openapi: "3.0.0",
-    info: {
-      title: "Video Games API",
-      version: "1.0.0",
-    },
+const swaggerAutogen = require('swagger-autogen')();
+
+const doc = {
+  info: {
+    title: 'Video Game API',
+    description: 'API for managing games, users, characters, and platforms',
   },
-  apis: ["../routes/*.js"], // You can add JSDoc comments here for endpoints
+  host: 'localhost:3000',
+  schemes: ['http'],
 };
 
-const specs = swaggerJsdoc(options);
+const outputFile = './swagger-output.json';
+const endpointsFiles = ['./routes/index.js'];
 
-module.exports = {
-  swaggerUi,
-  specs,
-};
+swaggerAutogen(outputFile, endpointsFiles, doc);
+

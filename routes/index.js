@@ -24,6 +24,8 @@ router.use("/characters", require("./characters"));
 
 // Will be added later
 // router.use('/users', require('./users'));
+// Will be added later 
+router.use('/users', require('./userRoutes'));
 // router.use('/games', require('./games'));
 // router.use('/platforms', require('./platforms'));
 

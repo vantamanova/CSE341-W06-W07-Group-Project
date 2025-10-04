@@ -1,44 +1,19 @@
-// Sets up and exports MongoDB connection logic for use throughout the application.
-// Load environment variables from .env file
-const dotenv = require('dotenv');
-dotenv.config();
+const mongoose = require('mongoose');
 
-// Import MongoDB client
-const { MongoClient } = require('mongodb');
-
-// Variable for database connection
-let database;
-
-const initDb = (callback) => {
-  // If database is already connected, skip reconnecting
-  if (database) {
-    console.log('Database is already initialized!');
-    return callback(null, database);
-  }
-
-  // Connect to MongoDB using connection string from .env
-  MongoClient.connect(process.env.MONGODB_URI)
-    .then((client) => {
-
-      database = client.db('CSE341_Group');
-      console.log('Database connected!');
-      callback(null, database);
-    })
-    .catch((err) => {
-      callback(err);
+const initDb = async (callback) => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
-};
-
-
-const getDatabase = () => {
-  if (!database) {
-    throw Error('Database not initialized');
+    console.log('Mongoose connected!');
+    callback(null);
+  } catch (err) {
+    console.error('Failed to connect with Mongoose:', err);
+    callback(err);
   }
-  return database;
 };
 
-// Export functions
-module.exports = {
-  initDb,
-  getDatabase
-};
+const getDatabase = () => mongoose.connection;
+
+module.exports = { initDb, getDatabase };

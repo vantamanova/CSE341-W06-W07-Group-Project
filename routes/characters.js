@@ -1,6 +1,5 @@
 // Defines routes for character-related endpoints and maps them to controller functions.
-
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
 /**
@@ -12,8 +11,8 @@ const router = express.Router();
  *       200:
  *         description: Success
  */
-router.get("/", (req, res) => {
-  res.send("Characters route working");
+router.get('/', (req, res) => {
+  res.send('Characters route working');
 });
 
 /**
@@ -38,8 +37,8 @@ router.get("/", (req, res) => {
  *       201:
  *         description: Character created
  */
-router.post("/", (req, res) => {
-  res.send("Character created");
+router.post('/', (req, res) => {
+  res.send('Character created');
 });
 
 /**
@@ -70,7 +69,8 @@ router.post("/", (req, res) => {
  *       200:
  *         description: Character updated
  */
-router.put("/:id", (req, res) => {
+
+router.put('/:id', (req, res) => {
   res.send(`Character ${req.params.id} updated`);
 });
 
@@ -89,7 +89,7 @@ router.put("/:id", (req, res) => {
  *       200:
  *         description: Character deleted
  */
-router.delete("/:id", (req, res) => {
+router.delete('/:id', (req, res) => {
   res.send(`Character ${req.params.id} deleted`);
 });
 
