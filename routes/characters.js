@@ -1,96 +1,59 @@
 // Defines routes for character-related endpoints and maps them to controller functions.
 const express = require('express');
 const router = express.Router();
+const usersController = require('../controllers/characters');
+const { validateUser } = require('../middlewares/validateCharacter');
+const charactersController = require('../controllers/characters');
 
-/**
- * @swagger
- * /characters:
- *   get:
- *     description: Get all characters
- *     responses:
- *       200:
- *         description: Success
- */
-router.get('/', (req, res) => {
-  res.send('Characters route working');
-});
+router.get('/', 
+    /* #swagger.tags = ['Characters'] */
+    charactersController.getAllCharacters);
 
-/**
- * @swagger
- * /characters:
- *   post:
- *     description: Create a new character
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *               role:
- *                 type: string
- *               game:
- *                 type: string
- *     responses:
- *       201:
- *         description: Character created
- */
+router.get('/:id', 
+    /* #swagger.tags = ['Characters'] */
+    charactersController.getCharacterById); 
+
 router.post('/', (req, res) => {
-  res.send('Character created');
+   /*  
+    #swagger.tags = ['Characters']
+    #swagger.description = 'Create a new character'
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Character information',
+      required: true,
+      schema: {
+        name: 'character',
+        associated_games: ['Hades II', 'Cyberpunk 2077'],
+        role: 'Supporting'
+      }
+    }
+  */
+  charactersController.createCharacter(req, res);
 });
 
-/**
- * @swagger
- * /characters/{id}:
- *   put:
- *     description: Update a character
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *               role:
- *                 type: string
- *               game:
- *                 type: string
- *     responses:
- *       200:
- *         description: Character updated
- */
 
 router.put('/:id', (req, res) => {
-  res.send(`Character ${req.params.id} updated`);
+  /*  
+    #swagger.tags = ['Characters']
+    #swagger.description = 'Update an existing character'
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Updated character information',
+      required: true,
+      schema: {
+        name: 'character',
+        associated_games: ['Hades II', 'Cyberpunk 2077'],
+        role: 'Protagonist'
+      }
+    }
+  */
+  charactersController.updateCharacter(req, res);
 });
 
-/**
- * @swagger
- * /characters/{id}:
- *   delete:
- *     description: Delete a character
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: Character deleted
- */
+
 router.delete('/:id', (req, res) => {
-  res.send(`Character ${req.params.id} deleted`);
+    /* #swagger.tags = ['Characters'] */
+    charactersController.deleteCharacter(req, res);
 });
 
 module.exports = router;

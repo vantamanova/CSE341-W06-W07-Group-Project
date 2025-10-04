@@ -10,7 +10,7 @@ router.get('/',
 
 router.get('/:id', 
     /* #swagger.tags = ['Users'] */
-    usersController.getUserById);
+    usersController.getUserById); 
 
 router.get('/username/:username', 
     /* #swagger.tags = ['Users'] */
