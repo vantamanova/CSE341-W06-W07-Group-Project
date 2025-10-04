@@ -1,8 +1,7 @@
 // Defines routes for character-related endpoints and maps them to controller functions.
 const express = require('express');
 const router = express.Router();
-const usersController = require('../controllers/characters');
-const { validateUser } = require('../middlewares/validateCharacter');
+const { validateCharacter } = require('../middlewares/validateCharacter');
 const charactersController = require('../controllers/characters');
 
 router.get('/', 
@@ -13,7 +12,7 @@ router.get('/:id',
     /* #swagger.tags = ['Characters'] */
     charactersController.getCharacterById); 
 
-router.post('/', (req, res) => {
+router.post('/',
    /*  
     #swagger.tags = ['Characters']
     #swagger.description = 'Create a new character'
@@ -28,11 +27,12 @@ router.post('/', (req, res) => {
       }
     }
   */
-  charactersController.createCharacter(req, res);
-});
+ validateCharacter,
+  charactersController.createCharacter
+);
 
 
-router.put('/:id', (req, res) => {
+router.put('/:id',
   /*  
     #swagger.tags = ['Characters']
     #swagger.description = 'Update an existing character'
@@ -47,8 +47,9 @@ router.put('/:id', (req, res) => {
       }
     }
   */
-  charactersController.updateCharacter(req, res);
-});
+  validateCharacter,
+  charactersController.updateCharacter
+);
 
 
 router.delete('/:id', (req, res) => {
