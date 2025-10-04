@@ -1,5 +1,4 @@
 // Defines routes for character-related endpoints and maps them to controller functions.
-
 const express = require('express');
 const router = express.Router();
 
@@ -70,6 +69,7 @@ router.post('/', (req, res) => {
  *       200:
  *         description: Character updated
  */
+
 router.put('/:id', (req, res) => {
   res.send(`Character ${req.params.id} updated`);
 });
