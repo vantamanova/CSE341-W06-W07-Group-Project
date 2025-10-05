@@ -14,7 +14,7 @@ exports.getAllUsers = async (req, res) => {
 
 exports.getUserById = async (req, res) => {
     try {
-        const userId = await (req.params.id);
+        const userId = req.params.id;
         // Logic to fetch a user by ID from the database
         const user = await User.findById(userId); // Replace with actual DB call
         if (!user) {
@@ -30,7 +30,7 @@ exports.getUserbyUsername = async (req, res) => {
     try {
         const username = req.params.username;
         // Logic to fetch a user by username from the database
-        const user = await User .findOne({ username }); // Replace with actual DB call
+        const user = await User.findOne({ username }); // Replace with actual DB call
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }

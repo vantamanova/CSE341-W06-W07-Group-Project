@@ -17,11 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 // Mount routes (AFTER JSON middleware)
-const usersRoutes = require('./routes/userRoutes');
-const charactersRoutes = require('./routes/characters');
-
-app.use('/users', usersRoutes);
-app.use('/characters', charactersRoutes);
 app.use('/', routes);
 
 // Initialize database, then start server
