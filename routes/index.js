@@ -6,7 +6,7 @@ const db = require("../database/connect");
 
 // Temporary root check
 router.get("/", (req, res) => {
-  res.send("CSE341 Group Project API is running");
+   res.status(200).json({ message: "CSE341 Group Project API is running" });
 });
 
 

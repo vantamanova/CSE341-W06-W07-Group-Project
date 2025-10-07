@@ -42,13 +42,18 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 // Mount routes
 app.use('/', routes);
 
+// Serve Jest coverage report at /coverage
+app.use('/coverage', express.static('coverage/lcov-report'));
+
 // Initialize database, then start server
 db.initDb((err) => {
   if (err) {
     console.error('Failed to connect to MongoDB:', err);
   } else {
-    app.listen(port, () => {
-      console.log(`Server running on http://localhost:${port}`);
+    app.listen(PORT, () => {
+      console.log(`Server running on http://localhost:${PORT}`);
     });
   }
 });
+
+module.exports = app;
