@@ -9,9 +9,9 @@ router.get("/", (req, res) => {
   res.send("CSE341 Group Project API is running");
 });
 
-// Will be added later
-// router.use('/users', require('./users'));
+
 // Will be added later 
+router.use('/', require('./authRoutes'));
 router.use('/users', require('./userRoutes'));
 router.use("/characters", require("./characters"));
 // router.use('/games', require('./games'));
