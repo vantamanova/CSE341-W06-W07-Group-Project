@@ -1,4 +1,5 @@
 // helpers/validate.js
+const { validationResult } = require('express-validator');
 const Joi = require('joi');
 
 // User schema
@@ -22,7 +23,27 @@ const characterSchema = Joi.object({
   role: Joi.string().min(3).required(),
 });
 
+const gameSchema = Joi.object({
+  title: Joi.string().min(1).required(),
+  genre: Joi.string().min(3).required(),
+  release_date: Joi.date().iso().required(),
+  developer: Joi.string().min(3).required(),
+  platforms: Joi.array().items(Joi.string()).required(),
+});
+
+// Express middleware for validation errors
+const handleValidationErrors = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ message: errors.array()[0].msg });
+  }
+  next();
+
 module.exports = {
   userSchema,
+  characterSchema,
+  gameSchema,
+  handleValidationErrors
+};
   characterSchema
 };
