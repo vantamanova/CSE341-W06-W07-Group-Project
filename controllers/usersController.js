@@ -14,7 +14,7 @@ exports.getAllUsers = async (req, res) => {
 
 exports.getUserById = async (req, res) => {
     try {
-        const userId = await (req.params.id);
+        const userId = req.params.id;
         // Logic to fetch a user by ID from the database
         const user = await User.findById(userId); // Replace with actual DB call
         if (!user) {
@@ -30,7 +30,7 @@ exports.getUserbyUsername = async (req, res) => {
     try {
         const username = req.params.username;
         // Logic to fetch a user by username from the database
-        const user = await User .findOne({ username }); // Replace with actual DB call
+        const user = await User.findOne({ username }); // Replace with actual DB call
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
@@ -40,32 +40,53 @@ exports.getUserbyUsername = async (req, res) => {
     }
 };
 
+// controllers/usersController.js
 exports.addUser = async (req, res) => {
-    try {
-        const newUser = new User(req.body);
-        // Logic to add a new user to the database
-        const savedUser = await newUser.save(); // Replace with actual DB call
-        res.status(201).json(savedUser);
-    } catch (err) {
-        res.status(500).json({ error: 'Failed to add user' });
+  try {
+    const payload = { ...req.body };
+
+    // Ensure date is a Date object (Swagger sends a string)
+    if (payload.date_of_registration) {
+      payload.date_of_registration = new Date(payload.date_of_registration);
     }
+
+    const savedUser = await User.create(payload);
+    return res.status(201).json(savedUser);
+  } catch (err) {
+    // Duplicate key (unique email/username)
+    if (err && err.code === 11000) {
+      const field = Object.keys(err.keyPattern || {})[0] || 'field';
+      return res.status(409).json({ error: `${field} already exists` });
+    }
+
+    // Mongoose validation error
+    if (err && err.name === 'ValidationError') {
+      const details = Object.values(err.errors).map(e => e.message);
+      return res.status(400).json({ error: 'Validation failed', details });
+    }
+
+    console.error('Add user error:', err); // keep this for debugging
+    return res.status(500).json({ error: 'Failed to add user' });
+  }
 };
 
 exports.updateUser = async (req, res) => {
     try {
-        const updatedUser = await User.findByIdAndUpdate(userId, req.body, { new: true }); // Replace with actual DB call
+        const userId = req.params.userId; 
+        const updatedUser = await User.findByIdAndUpdate(userId, req.body, { new: true, runValidators: true }); // Replace with actual DB call
         if (!updatedUser) {
             return res.status(404).json({ error: 'User not found' });
         }
         res.json(updatedUser);
     } catch (err) {
-        res.status(400).json({ error: 'Failed to update user' });
+        console.error('Update error:', err.message); 
+        res.status(400).json({ error: err.message });
     }
 };
 
 exports.deleteUser = async (req, res) => {
     try {
-        const userId = req.params.id;
+        const userId = req.params.userId;
         // Logic to delete a user by ID from the database
         const deletedUser = await User.findByIdAndDelete(userId); // Replace with actual DB call
         if (!deletedUser) {

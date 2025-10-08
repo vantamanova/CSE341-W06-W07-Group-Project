@@ -1,16 +1,22 @@
 // Entry point of the application.
 // Sets up Express server, middleware, and connects routes.
-
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger-output.json');
 const express = require('express');
 const app = express();
 require('dotenv').config();
 
 const routes = require('./routes');
 const db = require('./database/connect');
-
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Swagger UI route
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+// Mount routes (AFTER JSON middleware)
 app.use('/', routes);
 
 // Initialize database, then start server

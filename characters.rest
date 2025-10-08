@@ -1,0 +1,41 @@
+### Get all characters
+GET http://localhost:3000/characters
+Accept: application/json
+
+
+### Get character by ID
+GET http://localhost:3000/characters/68d78bee2aeee0865bfe0b9c
+Accept: application/json
+
+
+### Create a new character
+POST http://localhost:3000/characters
+Content-Type: application/json
+
+{
+  "name": "character",
+  "associated_games": [
+    "Hades II",
+    "Cyberpunk 2077"
+  ],
+  "role": "Supporting"
+}
+
+
+### Update an existing character
+PUT http://localhost:3000/characters/68e144a8a98e7e78ff23727f
+Content-Type: application/json
+
+{
+  "name": "character",
+  "associated_games": [
+    "Hades II",
+    "Cyberpunk 2077"
+  ],
+  "role": "Protagonist"
+}
+
+
+### Delete a character
+DELETE http://localhost:3000/characters/68e144a8a98e7e78ff23727f
+Accept: application/json

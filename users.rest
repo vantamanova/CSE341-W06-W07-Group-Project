@@ -1,0 +1,61 @@
+### Get all users
+GET http://localhost:3000/users
+Content-Type: application/json
+
+###
+
+### Get user by ID
+GET http://localhost:3000/users/68df720d615d4633d6c55746
+Content-Type: application/json
+
+###
+
+### Get user by username
+GET http://localhost:3000/users/username/daniel
+Content-Type: application/json
+
+###
+
+### Create a new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "role": "user",
+  "username": "Amily",
+  "email": "amily@gmail.com",
+  "favorites": [
+    "Hades II",
+    "Cyberpunk 2077"
+  ],
+  "rank": "Expert",
+  "date_of_registration": "2021-08-22",
+  "age": 29,
+  "membership": "premium"
+}
+
+###
+
+### Update a user
+PUT http://localhost:3000/users/68df720d615d4633d6c55746
+Content-Type: application/json
+
+{
+  "role": "user",
+  "username": "Amily",
+  "email": "amily@gmail.com",
+  "favorites": [
+    "Hades II",
+    "Cyberpunk 2077"
+  ],
+  "rank": "Expert",
+  "date_of_registration": "2021-08-22",
+  "age": 99,
+  "membership": "premium"
+}
+
+###
+
+### Delete a user
+DELETE http://localhost:3000/users/68df720d615d4633d6c55746
+Content-Type: application/json
