@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const usersController = require('../controllers/usersController');
 const { validateUser } = require('../middlewares/validateUser');
+const {IsAuthenticated} = require("../middlewares/auth");
 
 router.get('/', 
     /* #swagger.tags = ['Users'] */
@@ -18,7 +19,7 @@ router.get('/username/:username',
 //router.get('/loginUser', usersController.addUser);
 //router.get('/logoutUser', usersController.addUser);
 
-router.post('/', 
+router.post('/', IsAuthenticated,
     /*  
     #swagger.tags = ['Users']
     #swagger.description = 'Create a new user'
@@ -41,7 +42,7 @@ router.post('/',
     validateUser,
     usersController.addUser);
 
-router.put('/:userId',
+router.put('/:userId', IsAuthenticated,
      /*  
     #swagger.tags = ['Users']
     #swagger.description = 'Create a new user'
@@ -64,7 +65,7 @@ router.put('/:userId',
     validateUser, 
     
     usersController.updateUser);
-router.delete('/:userId',
+router.delete('/:userId', IsAuthenticated,
     /* #swagger.tags = ['Users'] */
     usersController.deleteUser);
 

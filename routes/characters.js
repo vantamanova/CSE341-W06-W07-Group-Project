@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const { validateCharacter } = require('../middlewares/validateCharacter');
 const charactersController = require('../controllers/characters');
+const {IsAuthenticated} = require("../middlewares/auth");
 
 router.get('/', 
     /* #swagger.tags = ['Characters'] */
@@ -12,7 +13,7 @@ router.get('/:id',
     /* #swagger.tags = ['Characters'] */
     charactersController.getCharacterById); 
 
-router.post('/',
+router.post('/', IsAuthenticated,
    /*  
     #swagger.tags = ['Characters']
     #swagger.description = 'Create a new character'
@@ -32,7 +33,7 @@ router.post('/',
 );
 
 
-router.put('/:id',
+router.put('/:id', IsAuthenticated,
   /*  
     #swagger.tags = ['Characters']
     #swagger.description = 'Update an existing character'
@@ -52,7 +53,7 @@ router.put('/:id',
 );
 
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', IsAuthenticated, (req, res) => {
     /* #swagger.tags = ['Characters'] */
     charactersController.deleteCharacter(req, res);
 });
