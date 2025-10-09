@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 router.use('/', require('./authRoutes'));
 router.use('/users', require('./userRoutes'));
 router.use("/characters", require("./characters"));
-// router.use('/games', require('./games'));
+router.use('/games', require('./games'));
 // router.use('/platforms', require('./platforms'));
 
 module.exports = router;
