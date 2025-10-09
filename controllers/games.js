@@ -1,5 +1,4 @@
 // Controller for handling logic related to game endpoints (CRUD operations, business rules).
-
 const e = require('express');
 const Game = require('../models/gamesModel');
 
@@ -57,3 +56,4 @@ exports.deleteGame = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+

@@ -1,4 +1,5 @@
 // Controller for handling logic related to platform endpoints (CRUD operations, business rules).
+
 const Platform = require("../models/platformsModel");
 const asyncHandler = require("express-async-handler");
 
@@ -6,7 +7,6 @@ exports.getAllPlatforms = asyncHandler(async (req, res) => {
   const platforms = await Platform.find();
   res.json(platforms);
 });
-
 
 exports.getPlatformById = asyncHandler(async (req, res) => {
   const platform = await Platform.findById(req.params.id);
@@ -16,7 +16,6 @@ exports.getPlatformById = asyncHandler(async (req, res) => {
   }
   res.json(platform);
 });
-
 
 exports.createPlatform = asyncHandler(async (req, res) => {
   const { name, manufacturer, releaseYear, type, logoUrl } = req.body;

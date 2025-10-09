@@ -1,24 +1,61 @@
 // Defines routes for game-related endpoints and maps them to controller functions.
-const {IsAuthenticated} = require("../middlewares/auth");
-
 const express = require('express');
 const router = express.Router();
+const { validateGame } = require('../middlewares/validateGame');
 const gamesController = require('../controllers/games');
-const {validateGame} = require('../middlewares/validateGame');
+const { IsAuthenticated } = require('../middlewares/auth');
 
-// GET all games
-router.get('/', gamesController.getAllGames);
+router.get('/',
+  /* #swagger.tags = ['Games'] */
+  gamesController.getAllGames
+);
 
-// GET a specific game by ID
-router.get('/:id', gamesController.getGameById);
+router.get('/:id',
+  /* #swagger.tags = ['Games'] */
+  gamesController.getGameById
+);
 
-// POST a new game with validation middleware
-router.post('/', IsAuthenticated, validateGame, gamesController.addGame);
+router.post('/', IsAuthenticated,
+  /*  
+    #swagger.tags = ['Games']
+    #swagger.description = 'Create a new game'
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Game information',
+      required: true,
+      schema: {
+        title: 'Cyberpunk 2077',
+        genre: 'RPG',
+        releaseDate: '2020-12-10'
+      }
+    }
+  */
+  validateGame,
+  gamesController.addGame
+);
 
-// PUT to update an existing game with validation middleware
-router.put('/:id', IsAuthenticated, validateGame, gamesController.updateGame);
+router.put('/:id', IsAuthenticated,
+  /*  
+    #swagger.tags = ['Games']
+    #swagger.description = 'Update an existing game'
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Updated game information',
+      required: true,
+      schema: {
+        title: 'Cyberpunk 2077',
+        genre: 'Action RPG',
+        releaseDate: '2020-12-10'
+      }
+    }
+  */
+  validateGame,
+  gamesController.updateGame
+);
 
-// DELETE a game by ID
-router.delete('/:id', IsAuthenticated,  gamesController.deleteGame);
+router.delete('/:id', IsAuthenticated,
+  /* #swagger.tags = ['Games'] */
+  gamesController.deleteGame
+);
 
 module.exports = router;
