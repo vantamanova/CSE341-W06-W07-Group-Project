@@ -471,7 +471,9 @@
     },
     "/games/": {
       "get": {
-
+        "tags": [
+          "Games"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -483,8 +485,35 @@
         }
       },
       "post": {
-
-        "description": "",
+        "tags": [
+          "Games"
+        ],
+        "description": "Create a new game",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Game information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Cyberpunk 2077"
+                },
+                "genre": {
+                  "type": "string",
+                  "example": "RPG"
+                },
+                "releaseDate": {
+                  "type": "string",
+                  "example": "2020-12-10"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -500,6 +529,9 @@
     },
     "/games/{id}": {
       "get": {
+        "tags": [
+          "Games"
+        ],
         "description": "",
         "parameters": [
           {
@@ -515,18 +547,46 @@
           },
           "404": {
             "description": "Not Found"
-
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
-
+        "tags": [
+          "Games"
+        ],
+        "description": "Update an existing game",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Updated game information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Cyberpunk 2077"
+                },
+                "genre": {
+                  "type": "string",
+                  "example": "Action RPG"
+                },
+                "releaseDate": {
+                  "type": "string",
+                  "example": "2020-12-10"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -545,6 +605,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Games"
+        ],
         "description": "",
         "parameters": [
           {
@@ -563,12 +626,18 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/platforms/": {
       "get": {
+        "tags": [
+          "Platforms"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -577,27 +646,30 @@
         }
       },
       "post": {
+        "tags": [
+          "Platforms"
+        ],
+        "description": "Create a new platform",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "description": "Platform information",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "PlayStation 5"
                 },
                 "manufacturer": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Sony"
                 },
                 "releaseYear": {
-                  "example": "any"
-                },
-                "type": {
-                  "example": "any"
-                },
-                "logoUrl": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 2020
                 }
               }
             }
@@ -609,11 +681,18 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
         }
       }
     },
     "/platforms/{id}": {
       "get": {
+        "tags": [
+          "Platforms"
+        ],
         "description": "",
         "parameters": [
           {
@@ -633,8 +712,10 @@
         }
       },
       "put": {
-        "description": "",
-
+        "tags": [
+          "Platforms"
+        ],
+        "description": "Update an existing platform",
         "parameters": [
           {
             "name": "id",
@@ -645,23 +726,22 @@
           {
             "name": "body",
             "in": "body",
+            "description": "Updated platform information",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "PlayStation 5"
                 },
                 "manufacturer": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Sony Interactive Entertainment"
                 },
                 "releaseYear": {
-                  "example": "any"
-                },
-                "type": {
-                  "example": "any"
-                },
-                "logoUrl": {
-                  "example": "any"
+                  "type": "number",
+                  "example": 2020
                 }
               }
             }
@@ -671,12 +751,21 @@
           "200": {
             "description": "OK"
           },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           }
         }
       },
       "delete": {
+        "tags": [
+          "Platforms"
+        ],
         "description": "",
         "parameters": [
           {
@@ -690,26 +779,8 @@
           "200": {
             "description": "OK"
           },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/platforms/{id}/games": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
+          "401": {
+            "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"

@@ -31,7 +31,7 @@ router.post('/', IsAuthenticated,
     }
   */
   validateGame,
-  gamesController.createGame
+  gamesController.addGame
 );
 
 router.put('/:id', IsAuthenticated,
