@@ -1,7 +1,4 @@
 // Defines routes for game-related endpoints and maps them to controller functions.
-// const {IsAuthenticated} = require("../middlewares/auth");
-
-
 const express = require('express');
 const router = express.Router();
 const { validateGame } = require('../middlewares/validateGame');
