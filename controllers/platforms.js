@@ -12,7 +12,7 @@ exports.getPlatformById = asyncHandler(async (req, res) => {
   const platform = await Platform.findById(req.params.id);
   if (!platform) {
     res.status(404);
-    throw new Error("Platform not found");
+    return res.status(404).json({ message: "Platform not found" });
   }
   res.json(platform);
 });
