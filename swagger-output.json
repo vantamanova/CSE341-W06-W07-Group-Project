@@ -7,9 +7,7 @@
   },
   "host": "cse341-w06-w07-group-project.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/": {
       "get": {
@@ -36,9 +34,7 @@
     },
     "/users/": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "description": "",
         "responses": {
           "200": {
@@ -50,9 +46,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "description": "Create a new user",
         "parameters": [
           {
@@ -77,10 +71,7 @@
                 },
                 "favorites": {
                   "type": "array",
-                  "example": [
-                    "Hades II",
-                    "Cyberpunk 2077"
-                  ],
+                  "example": ["Hades II", "Cyberpunk 2077"],
                   "items": {
                     "type": "string"
                   }
@@ -123,9 +114,7 @@
     },
     "/users/{id}": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "description": "",
         "parameters": [
           {
@@ -150,9 +139,7 @@
     },
     "/users/username/{username}": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "description": "",
         "parameters": [
           {
@@ -177,9 +164,7 @@
     },
     "/users/{userId}": {
       "put": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "description": "Create a new user",
         "parameters": [
           {
@@ -210,10 +195,7 @@
                 },
                 "favorites": {
                   "type": "array",
-                  "example": [
-                    "Hades II",
-                    "Cyberpunk 2077"
-                  ],
+                  "example": ["Hades II", "Cyberpunk 2077"],
                   "items": {
                     "type": "string"
                   }
@@ -251,9 +233,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "description": "",
         "parameters": [
           {
@@ -278,9 +258,7 @@
     },
     "/characters/": {
       "get": {
-        "tags": [
-          "Characters"
-        ],
+        "tags": ["Characters"],
         "description": "",
         "responses": {
           "200": {
@@ -289,9 +267,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Characters"
-        ],
+        "tags": ["Characters"],
         "description": "Create a new character",
         "parameters": [
           {
@@ -308,10 +284,7 @@
                 },
                 "associated_games": {
                   "type": "array",
-                  "example": [
-                    "Hades II",
-                    "Cyberpunk 2077"
-                  ],
+                  "example": ["Hades II", "Cyberpunk 2077"],
                   "items": {
                     "type": "string"
                   }
@@ -333,9 +306,7 @@
     },
     "/characters/{id}": {
       "get": {
-        "tags": [
-          "Characters"
-        ],
+        "tags": ["Characters"],
         "description": "",
         "parameters": [
           {
@@ -355,9 +326,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Characters"
-        ],
+        "tags": ["Characters"],
         "description": "Update an existing character",
         "parameters": [
           {
@@ -380,10 +349,7 @@
                 },
                 "associated_games": {
                   "type": "array",
-                  "example": [
-                    "Hades II",
-                    "Cyberpunk 2077"
-                  ],
+                  "example": ["Hades II", "Cyberpunk 2077"],
                   "items": {
                     "type": "string"
                   }
@@ -406,9 +372,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Characters"
-        ],
+        "tags": ["Characters"],
         "description": "",
         "parameters": [
           {
